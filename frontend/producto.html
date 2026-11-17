@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Producto — Peluchi 🧸</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧸</text></svg>" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/static/css/styles.css" />
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <main class="container" style="padding-top:26px">
+    <div class="cargando" id="carga-producto">Cargando producto...</div>
+
+    <div id="contenido" class="oculto">
+      <div class="migas" style="color:var(--texto-suave);margin-bottom:18px">
+        <a href="/">Inicio</a> / <a href="/tienda.html">Tienda</a> /
+        <span id="miga-categoria"></span>
+      </div>
+
+      <section class="ficha">
+        <div class="ficha-img" id="ficha-img"></div>
+        <div class="ficha-info">
+          <span class="producto-cat" id="ficha-cat"></span>
+          <h1 id="ficha-nombre"></h1>
+          <div class="ficha-sku" id="ficha-sku"></div>
+          <div id="ficha-estrellas"></div>
+
+          <div class="ficha-precio" id="ficha-precio"></div>
+
+          <p class="ficha-descripcion" id="ficha-desc"></p>
+
+          <div class="ficha-meta" id="ficha-meta"></div>
+
+          <div class="cantidad-selector">
+            <div class="control">
+              <button id="menos" aria-label="Menos">−</button>
+              <input type="number" id="cantidad" value="1" min="1" max="99" readonly />
+              <button id="mas" aria-label="Más">+</button>
+            </div>
+            <span id="stock-info"></span>
+          </div>
+
+          <div style="display:flex;gap:12px;flex-wrap:wrap">
+            <button class="btn" id="btn-comprar">🛒 Añadir al carrito</button>
+            <a class="btn btn-secundario" href="/carrito.html">Ver carrito</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Reseñas -->
+      <section class="seccion">
+        <div class="seccion-cabecera">
+          <div>
+            <h2>💬 Reseñas</h2>
+            <div class="sub" id="resumen-resenas"></div>
+          </div>
+        </div>
+
+        <div class="form-card mb-2" id="form-resena" style="max-width:640px">
+          <h3 style="margin-bottom:12px">Deja tu reseña</h3>
+          <div id="aviso-resena"></div>
+          <form id="resena-form">
+            <div class="campo">
+              <label for="rating">Puntuación</label>
+              <select id="rating" required>
+                <option value="5">★★★★★ Excelente (5)</option>
+                <option value="4">★★★★ Muy bueno (4)</option>
+                <option value="3">★★★ Bueno (3)</option>
+                <option value="2">★★ Regular (2)</option>
+                <option value="1">★ Malo (1)</option>
+              </select>
+            </div>
+            <div class="campo">
+              <label for="comentario">Comentario</label>
+              <textarea id="comentario" rows="3" maxlength="2000"
+                        placeholder="Cuéntanos qué te pareció..."></textarea>
+            </div>
+            <button class="btn" type="submit">Publicar reseña</button>
+          </form>
+        </div>
+
+        <div class="resenas" id="lista-resenas"></div>
+      </section>
+
+      <!-- Relacionados -->
+      <section class="seccion">
+        <div class="seccion-cabecera">
+          <div><h2>Te puede gustar</h2></div>
+          <a class="ver-mas" href="/tienda.html">Ver todo →</a>
+        </div>
+        <div class="productos-grid" id="relacionados"></div>
+      </section>
+    </div>
+  </main>
+
+  <div id="site-footer"></div>
+  <script type="module" src="/static/js/producto.js"></script>
+</body>
+</html>

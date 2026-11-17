@@ -1,0 +1,14 @@
+# Entorno
+.venv/
+venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# Configuración sensible
+.env
+
+# Utilidades locales
+*.log
+Thumbnails/
+desktop.ini

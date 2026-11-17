@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Peluchi — Peluches de coleccionista 🧸</title>
+  <meta name="description" content="Tienda de peluches de coleccionista: clásicos, kawaii, ediciones limitadas y gigantes. Envío gratis desde 49 €." />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧸</text></svg>" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/static/css/styles.css" />
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <main>
+    <!-- Hero -->
+    <section class="hero">
+      <div class="container hero-inner">
+        <div class="hero-texto">
+          <h1>Peluches que merecen vitrina ✨</h1>
+          <p>Clásicos atemporales, kawaii, ediciones limitadas numeradas y gigantes de hasta 1 m.
+             Seleccionados para coleccionistas exigentes.</p>
+          <div class="hero-cta">
+            <a class="btn btn-claro" href="/tienda.html">Ver catálogo completo</a>
+            <a class="btn btn-oscuro" href="/tienda.html?sale=1">🔥 Ofertas hasta -30 %</a>
+          </div>
+        </div>
+        <div class="hero-emojis" aria-hidden="true">🧸</div>
+      </div>
+    </section>
+
+    <div class="container">
+      <!-- Ventajas -->
+      <section class="ventajas">
+        <div class="ventaja">
+          <span class="v-icono">🚚</span>
+          <div><strong>Envío gratis desde 49 €</strong><span>Entrega en 24-48 h</span></div>
+        </div>
+        <div class="ventaja">
+          <span class="v-icono">🔒</span>
+          <div><strong>Pago 100 % seguro</strong><span>Cifrado SSL y JWT</span></div>
+        </div>
+        <div class="ventaja">
+          <span class="v-icono">⭐</span>
+          <div><strong>Piezas auténticas</strong><span>Ediciones numeradas</span></div>
+        </div>
+        <div class="ventaja">
+          <span class="v-icono">↩️</span>
+          <div><strong>30 días de devolución</strong><span>Sin preguntas</span></div>
+        </div>
+      </section>
+
+      <!-- Categorías -->
+      <section class="seccion">
+        <div class="seccion-cabecera">
+          <div>
+            <h2>Explora por categoría</h2>
+            <div class="sub">Elige tu mundo favorito</div>
+          </div>
+          <a class="ver-mas" href="/tienda.html">Ver todo →</a>
+        </div>
+        <div class="categorias-grid" id="categorias">
+          <div class="cargando">Cargando categorías...</div>
+        </div>
+      </section>
+
+      <!-- Destacados -->
+      <section class="seccion">
+        <div class="seccion-cabecera">
+          <div>
+            <h2>⭐ Productos destacados</h2>
+            <div class="sub">Los favoritos de nuestra comunidad</div>
+          </div>
+          <a class="ver-mas" href="/tienda.html?featured=1">Ver todos →</a>
+        </div>
+        <div class="productos-grid" id="destacados">
+          <div class="cargando">Cargando destacados...</div>
+        </div>
+      </section>
+
+      <!-- Novedades -->
+      <section class="seccion">
+        <div class="seccion-cabecera">
+          <div>
+            <h2>✨ Recién llegados</h2>
+            <div class="sub">Novedades de esta temporada</div>
+          </div>
+          <a class="ver-mas" href="/tienda.html?new=1">Ver todos →</a>
+        </div>
+        <div class="productos-grid" id="novedades">
+          <div class="cargando">Cargando novedades...</div>
+        </div>
+      </section>
+
+      <!-- Ofertas -->
+      <section class="seccion">
+        <div class="seccion-cabecera">
+          <div>
+            <h2>🔥 Ofertas</h2>
+            <div class="sub">Precios rebajados por tiempo limitado</div>
+          </div>
+          <a class="ver-mas" href="/tienda.html?sale=1">Ver todas →</a>
+        </div>
+        <div class="productos-grid" id="ofertas">
+          <div class="cargando">Cargando ofertas...</div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <div id="site-footer"></div>
+  <script type="module" src="/static/js/home.js"></script>
+</body>
+</html>

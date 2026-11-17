@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Tienda de peluches — Peluchi 🛍️</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧸</text></svg>" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/static/css/styles.css" />
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <main>
+    <section class="pagina-cabecera">
+      <div class="container">
+        <div class="migas"><a href="/">Inicio</a> / Tienda</div>
+        <h1 id="titulo-tienda">🛍️ Nuestra tienda</h1>
+        <p id="subtitulo-tienda">Todos los peluches de coleccionista</p>
+      </div>
+    </section>
+
+    <div class="container">
+      <div class="tienda-layout">
+        <!-- Filtros -->
+        <aside class="filtros">
+          <h3>Filtrar por</h3>
+
+          <div class="filtros-grupo">
+            <label>Categorías</label>
+            <div class="filtros-opciones" id="filtro-categorias">
+              <span style="color:var(--texto-suave);font-size:.85rem">Cargando...</span>
+            </div>
+          </div>
+
+          <div class="filtros-grupo">
+            <label>Rango de precios</label>
+            <div class="rango-precios">
+              <input type="number" id="precio-min" placeholder="Mín €" min="0" step="1" />
+              <input type="number" id="precio-max" placeholder="Máx €" min="0" step="1" />
+            </div>
+          </div>
+
+          <div class="filtros-grupo">
+            <label>Estado</label>
+            <div class="filtros-opciones">
+              <label><input type="checkbox" id="f-nuevo" /> ✨ Novedades</label>
+              <label><input type="checkbox" id="f-oferta" /> 🔥 En oferta</label>
+              <label><input type="checkbox" id="f-stock" /> ✅ En stock</label>
+            </div>
+          </div>
+
+          <button class="btn btn-ancho btn-secundario" id="limpiar-filtros">Limpiar filtros</button>
+        </aside>
+
+        <!-- Resultados -->
+        <section>
+          <div class="barra-tienda">
+            <div class="resultados-info" id="resultados-info">Cargando...</div>
+            <div class="ordenar">
+              <label class="sr-only" for="ordenar">Ordenar</label>
+              <select id="ordenar">
+                <option value="recent">Más recientes</option>
+                <option value="price_asc">Precio: menor a mayor</option>
+                <option value="price_desc">Precio: mayor a menor</option>
+                <option value="name">Nombre A-Z</option>
+                <option value="featured">Destacados primero</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="productos-grid" id="grid-productos">
+            <div class="cargando">Cargando productos...</div>
+          </div>
+
+          <div class="paginacion" id="paginacion"></div>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <div id="site-footer"></div>
+  <script type="module" src="/static/js/tienda.js"></script>
+</body>
+</html>
