@@ -98,6 +98,56 @@ La primera vez se crean las tablas y se cargan los datos de ejemplo automáticam
 
 ---
 
+## ☁️ Despliegue en Render
+
+El repositorio incluye un **Blueprint** (`render.yaml`) que crea la base de datos
+y el servicio web con prácticamente un solo clic.
+
+### Pasos
+
+1. Entra en <https://dashboard.render.com> y crea una cuenta (gratis, sin tarjeta).
+2. En el dashboard pulsa **New → Blueprint** y conecta tu cuenta de GitHub.
+3. Selecciona el repositorio `CoraimaM/Peluchi` y pulsa **Apply**.
+4. Render te pedirá el valor de **`ADMIN_PASSWORD`**: escribe la contraseña que
+   quieras para el administrador y **guárdala** (déjalo en blanco para usar
+   `admin1234`, la documentada abajo).
+5. Espera a que el despliegue termine (1-3 min) y abre la URL asignada:
+   `https://peluchi-api.onrender.com`
+
+| URL | Contenido |
+|---|---|
+| `https://peluchi-api.onrender.com/` | Tienda (frontend) |
+| `https://peluchi-api.onrender.com/docs` | Documentación OpenAPI |
+| `https://peluchi-api.onrender.com/api/health` | Estado de la API |
+
+> **La primera petición tarda ~1 minuto**: el servicio gratuito se duerme a los
+> 15 min sin tráfico y se despierra solo.
+
+### Configuración que hace el Blueprint
+
+| Variable | Origen |
+|---|---|
+| `DATABASE_URL` | inyectada desde la base de datos `peluchi-db` |
+| `SECRET_KEY` | generada aleatoriamente por Render |
+| `ADMIN_EMAIL` / `ADMIN_PASSWORD` | tú la eliges al sincronizar |
+| `FRONTEND_URL`, `BACKEND_URL`, `CORS_ORIGINS` | derivadas automáticamente de `RENDER_EXTERNAL_URL` |
+
+No hace falta tocar nada más: `app/config.py` convierte la URL de Render
+(`postgres://…`) al driver `psycopg3` y detecta la URL pública en la que corre.
+
+### Limitaciones del plan gratuito
+
+- **La base de datos caduca a los 30 días** desde su creación. Render te avisa
+  por correo; después tienes 14 días de gracia para subirla a plan de pago.
+- El servicio se duerme a los 15 min de inactividad (~1 minuto para despertar).
+- 750 horas de instancia al mes (suficiente para un servicio siempre activo).
+
+### Auto-despliegue
+
+`autoDeploy: true`: cada `git push` a `main` vuelve a desplegar automáticamente.
+
+---
+
 ## 🔑 Credenciales de prueba
 
 | Rol | Email | Contraseña |
