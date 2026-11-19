@@ -4,6 +4,7 @@ Proyecto completo: **API REST con OAuth2 + JWT (FastAPI · PostgreSQL)** y **fro
 (HTML/CSS/JS puro) inspirado en el diseño de [miniso.es](https://www.miniso.es/) y
 [amordepeluche.com](https://amordepeluche.com/es/).
 
+Enlace para entrar a la página publicada en Render: https://peluchi-api.onrender.com
 ---
 
 ## ✨ Características
