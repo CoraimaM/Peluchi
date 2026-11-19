@@ -5,6 +5,8 @@ Proyecto completo: **API REST con OAuth2 + JWT (FastAPI · PostgreSQL)** y **fro
 [amordepeluche.com](https://amordepeluche.com/es/).
 
 Enlace para entrar a la página publicada en Render: https://peluchi-api.onrender.com
+
+
 ---
 
 ## ✨ Características
